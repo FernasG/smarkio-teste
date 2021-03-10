@@ -14,7 +14,6 @@ app.set('view engine', 'ejs');
 rotas(app);
 
 app.get('/', (req, res)=> {
-    // res.send('Olá Mundo');
     res.render('index.html');
 });
 
