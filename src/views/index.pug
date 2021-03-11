@@ -1,0 +1,31 @@
+doctype html
+html 
+    head 
+        title= title 
+        style
+            include style.css
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous')
+
+    body
+        .container 
+            .input-section
+                h4 Comentário
+                section 
+                    textarea#input-block
+                    br 
+                    button#submit-button Cadastrar
+            
+            .show-section 
+                h4 Comentários 
+                section.panel   
+                    each row in audios
+                        .card 
+                            p= row.comentario
+                            button.play-audio(onclick=`playAudio("${row.caminho}")`) Ouvir
+                    else 
+                        p.text-error Não há nenhum comentário cadastrado!
+
+
+        script
+            include script.js
+

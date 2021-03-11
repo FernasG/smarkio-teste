@@ -9,12 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <script>
         const header = new Headers({
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': true
         });
 
-        let port = "<%= port %>";
+        let port = "";
 
-        const url = `localhost:${port}/audio`;
+        const url = `http://localhost:${port}/audio`;
     </script>
 
     <style>
@@ -79,17 +80,21 @@
             $("#submit-button").on("click", () => {
                 let value = $("#input-block").val();
 
-                // $.post("localhost:3333/audio", { text: value })
-                // .then((res) => {
-                //     console.log(res);
-                // }).catch((err) => {
-                //     console.error(err);
-                // })
-               
-                $.get("")
+                if(value != undefined && value != "" && value != null) {
+                    let data = JSON.stringify({ text: value });
+
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:3333/audio",
+                        data: data,
+                        contentType: "application/json",
+                        success: ((res) => {
+                            console.log(res);
+                        })
+                    })
+                }
             }); 
         })
-       
     </script>
 </body>
 </html>

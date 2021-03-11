@@ -1,17 +1,19 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
-const conn = new mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "smarkio-teste"
-});
+const params = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+}
+
+const conn = new mysql.createConnection(params);
 
 conn.connect((err) => {
     if(!err) {
         console.log("Conexão com banco de dados efetuada com sucesso!");
     }else {
-        console.log(err);
+        console.log("Erro ao conectar com banco de dados: ", err);
     }
 })
 
