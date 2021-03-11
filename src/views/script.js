@@ -28,6 +28,7 @@ $(document).ready(() => {
                 contentType: "application/json",
                 success: ((res) => {
                     if(res.data.id != undefined && res.data.id != null && res.data.id != ""){
+                        $("#input-block").val("");
                         getAudioData(res.data.id);
                         alert("Cadastro efetuado com sucesso!");
                     }

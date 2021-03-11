@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+@media only screen and (max-width: 720px) {
+    div.container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-section {
+        margin-bottom: 2%;
+    }
+
+    .show-section {
+        overflow: auto;
+        height: auto;
+    }
+
+}
+
+:root {
+    --blue: #1B98E0;
+    --blue-hover: #006494;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +30,28 @@
 
 body {
     background: rgba(0, 0, 0, 0.12);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 2%;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+textarea {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0 auto;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    height: 40px;
+    color: #FFF;
+    border: none;
+    background: var(--blue);
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+button:hover {
+    background: var(--blue-hover);
 }
 
 .container{
@@ -16,24 +61,35 @@ body {
 }
 
 .container > div {
-    min-height: 100vh;
+    border-radius: 10px;
     background: #FFF;
     padding: 3%;
 }
 
+.input-section section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .input-section h4{
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .input-section #input-block {
     resize: none;
     height: 200px;
-    width: 500px;
+    width: 80%;
 }
 
 .input-section button {
-    width: 500px;
-    margin: 20px 0;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.show-section {
+    height: 92vh;
+    overflow: scroll;
 }
 
 .panel {
@@ -51,4 +107,8 @@ body {
     width: 80%;
     min-height: 100px;
     margin: 10px auto;
+}
+
+.play-audio {
+    float: right;
 }

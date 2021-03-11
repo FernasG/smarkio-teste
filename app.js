@@ -10,11 +10,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/audios', express.static('audios'));
 
-// Configuração para renderizar arquivos HTML
+// Configuração para renderizar arquivos PUG
 app.set('views', './src/views');
 app.set('view engine', 'pug');
-// app.engine('html', require('ejs').renderFile);
-// app.set('view engine', 'ejs');
 
 rotas(app);
 
