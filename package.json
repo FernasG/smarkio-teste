@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node app"
+    "dev": "nodemon app"
   },
   "keywords": [],
   "author": "",
@@ -17,9 +17,12 @@
     "express": "^4.17.1",
     "ibm-watson": "^6.0.3",
     "mysql2": "^2.2.5",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "sequelize": "^6.7.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.11"
+    "@types/express": "^4.17.11",
+    "nodemon": "^2.0.14",
+    "sequelize-cli": "^6.2.0"
   }
 }
