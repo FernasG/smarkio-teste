@@ -17,9 +17,9 @@ services:
       - smk-teste
   node-api:
     container_name: smk-api
+    image: node:14.17
     depends_on:
       - mysql-db
-    image: node:14.17
     volumes: 
       - ./:/smk-api
     ports: 

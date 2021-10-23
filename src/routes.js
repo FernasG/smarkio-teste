@@ -1,5 +1,5 @@
-const audioController = require('./controllers/AudioController');
-const db = require('./database/config');
+const audioController = require('./controllers/AudiosController');
+const db = require('./database');
 
 module.exports = (app) => {
     // Função responsável por renderizar o arquivo PUG

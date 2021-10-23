@@ -1,4 +1,4 @@
-const db = require('../database/config');
+const db = require('../database');
 const fs = require('fs');
 // Váriaveis do IBM-WATSON
 const TextToSpeechV1  = require('ibm-watson/text-to-speech/v1');
