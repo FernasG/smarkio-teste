@@ -10,6 +10,4 @@ Audio.init({
     sequelize
 });
 
-console.log(sequelize.models.Audio);
-
 module.exports = Audio;
