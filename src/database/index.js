@@ -1,14 +1,14 @@
 const { Sequelize } = require('sequelize');
 const config = require('../config/database');
 
-const sequelize = new Sequelize(config);
+const sequelize = new Sequelize({ ...config, logging: false });
 
 (async() => {
     try {
         await sequelize.authenticate();
-        console.log('Connection has been established successfully.');
+        console.log('Conexão foi estabelecida com sucesso.');
     }catch(err) {
-        console.error('Unable to connect to the database:', err);
+        console.error('Erro ao conectar com o banco:', err);
     }
 })();
 

@@ -20,6 +20,7 @@
 :root {
     --blue: #1B98E0;
     --blue-hover: #006494;
+    --gray: #D2D2D2;
 }
 
 * {
@@ -85,11 +86,13 @@ button:hover {
 .input-section button {
     width: 80%;
     margin: 20px auto;
+    font-weight: bold;
+    font-size: 12pt;
 }
 
 .show-section {
     height: 92vh;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .panel {
@@ -101,7 +104,7 @@ button:hover {
 }
 
 .card {
-    border: 1px solid #c1c1c1;
+    border: 1px solid var(--gray);
     border-radius: 10px;
     padding: 10px;
     width: 80%;
@@ -111,4 +114,11 @@ button:hover {
 
 .play-audio {
     float: right;
+}
+
+.disabled {
+    background: var(--gray);
+    pointer-events: none;
+    cursor: not-allowed;
+    color: rgb(94, 94, 94);
 }

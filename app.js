@@ -2,12 +2,11 @@ const express = require('express');
 const app = express();
 require('dotenv').config(); // Configura as váriaveis de ambiente
 const rotas = require('./src/routes');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = process.env.PORT || 3333;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 app.use('/audios', express.static('audios'));
 
 // Configuração para renderizar arquivos PUG
