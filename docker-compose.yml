@@ -17,14 +17,16 @@ services:
       - smk-teste
   node-api:
     container_name: smk-api
-    image: node:14.17
+    env_file:
+      - .env
+    build: 
+      context: .
     depends_on:
       - mysql-db
     volumes: 
-      - ./:/smk-api
+      - "${PWD}:/app"
     ports: 
       - 3333:3333
-    command: bash -c "cd /smk-api && npm i && npm run dev"
     networks:
       - smk-teste
 

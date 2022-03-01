@@ -4,8 +4,5 @@ module.exports = {
     password: '123456',
     database: 'smarkio-teste',
     dialect: 'mysql',
-    define: {
-        timestamps: true,
-        underscored: true
-    }
+    define: { timestamps: true, underscored: true }
 }
